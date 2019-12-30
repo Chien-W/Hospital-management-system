@@ -1,0 +1,5 @@
+package Inpatient;
+
+public class Insert3 extends Insertpatientbed {
+
+}

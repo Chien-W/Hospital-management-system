@@ -1,0 +1,15 @@
+package Medicine;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class Insert extends Insertmedicine {
+	public static void insert(String Num, String Name, String Price, String Quantity, String Note) {
+		String sql_url = "jdbc:sqlserver://localhost:1433;integratedSecurity=true;DatabaseName=Student"; // 数据库路径（一般都是这样写），test是数据库名称
+		String name = "sa"; // 用户名
+		String password = "wu123456"; // 密码
+		Connection conn;
+		PreparedStatement preparedStatement = null;
+		
+	}
+}

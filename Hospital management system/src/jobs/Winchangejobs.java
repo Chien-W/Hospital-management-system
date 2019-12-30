@@ -1,0 +1,119 @@
+package jobs;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class Winchangejobs {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void start() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Winchangejobs window = new Winchangejobs();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Winchangejobs() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u5C97\u4F4D\u7BA1\u7406");
+		frame.setBounds(100, 100, 870, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JLabel label = new JLabel("\u4F60\u9700\u8981\u4FEE\u6539\u7684\u5DE5\u4F5C\u5C97\u4F4D\u4EE3\u53F7\uFF1A");
+		label.setBounds(12, 36, 430, 89);
+		label.setFont(new Font("宋体", Font.PLAIN, 30));
+		
+		JLabel label_1 = new JLabel("\u5DE5\u4F5C\u5C97\u4F4D\u4EE3\u53F7\uFF1A");
+		label_1.setBounds(12, 157, 196, 75);
+		label_1.setFont(new Font("宋体", Font.PLAIN, 28));
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(label);
+		frame.getContentPane().add(label_1);
+		
+		textField = new JTextField();
+		textField.setBounds(218, 176, 185, 36);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JButton btnNewButton = new JButton("\u786E\u5B9A");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Num = textField.getText();
+				String Name = textField_1.getText();
+				String S = textField_2.getText();
+				Changejobs.change(S,Num, Name);
+				JOptionPane.showMessageDialog(frame, "修改成功!");
+				frame.dispose();
+			}
+		});
+		btnNewButton.setBounds(548, 385, 116, 70);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton button = new JButton("\u91CD\u7F6E");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+			}
+		});
+		button.setBounds(700, 385, 116, 70);
+		frame.getContentPane().add(button);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(218, 282, 185, 36);
+		frame.getContentPane().add(textField_1);
+		
+		JLabel label_2 = new JLabel("\u5DE5\u4F5C\u5C97\u4F4D\u540D\u79F0\uFF1A");
+		label_2.setFont(new Font("宋体", Font.PLAIN, 28));
+		label_2.setBounds(12, 264, 196, 75);
+		frame.getContentPane().add(label_2);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(414, 57, 250, 36);
+		frame.getContentPane().add(textField_2);
+	}
+
+}

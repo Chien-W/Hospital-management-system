@@ -1,0 +1,42 @@
+package Hospital;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Logins extends Link {
+
+	public static int identify(String username,String userpsd) {
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+			Connection con = DBConnection.getConnection();
+			Statement stmt = con.createStatement();
+			String sql="select * from 系统的用户口令表";
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				String name1=rs.getString(1);
+				String pass1=rs.getString(2);
+				
+				System.out.println(username);
+				System.out.println(userpsd);
+				System.out.println(name1);
+				System.out.println(pass1);
+
+				if(username.equals(name1)&&userpsd.equals(pass1)) {
+					return 1;
+				}
+			}
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			System.out.println("未成功加载驱动。");
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("未成功打开数据库。");
+			e.printStackTrace();
+		}
+		return 0;
+	}
+}

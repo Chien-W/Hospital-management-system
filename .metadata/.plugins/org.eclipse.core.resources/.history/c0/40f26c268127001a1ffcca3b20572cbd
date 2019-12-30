@@ -1,0 +1,7 @@
+package Inpatient;
+
+import Medicine.Deletemedicine;
+
+public class Delete extends Deletemedicine {
+
+}

@@ -1,0 +1,76 @@
+package user;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
+
+public class Winusershow {
+
+	private JFrame frame;
+	private JTable table;
+
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Winusershow window = new Winusershow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Winusershow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u4E2A\u4EBA\u4FE1\u606F\u67E5\u8BE2");
+		frame.setBounds(100, 100, 800, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(-1, 0, 789, 483);
+		frame.getContentPane().add(scrollPane);
+		
+		table = new JTable();
+		scrollPane.setViewportView(table);
+
+	}
+
+}

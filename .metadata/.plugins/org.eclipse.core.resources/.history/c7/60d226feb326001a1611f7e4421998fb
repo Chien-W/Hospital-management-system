@@ -1,0 +1,5 @@
+package Medicine;
+
+public class Delete extends Deletemedicine {
+
+}

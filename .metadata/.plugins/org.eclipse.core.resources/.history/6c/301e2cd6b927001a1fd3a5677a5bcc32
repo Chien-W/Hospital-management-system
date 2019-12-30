@@ -1,0 +1,5 @@
+package Inpatient;
+
+public class Select2 extends Selectinpatient {
+
+}

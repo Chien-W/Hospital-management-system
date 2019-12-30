@@ -1,0 +1,32 @@
+package Hospital;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Link extends Login {
+	private static final Statement DBConnection = null;
+	static String urlSqlServer = "jdbc:sqlserver://localhost:1433;integratedSecurity=true;DatabaseName=Hospital table";	
+	static String name = "sa";		//用户名
+	static String password = "wu123456";	//密码
+	static Connection connection = null;
+	
+	public Link() throws SQLException {
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		} catch (ClassNotFoundException e1) {
+			System.out.println(e1.getMessage());
+		}
+		try {
+			connection = DriverManager.getConnection(urlSqlServer, name, password);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println("sqlserver 数据库驱动加载成功");
+	}
+	
+	
+
+}

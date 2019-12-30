@@ -1,0 +1,5 @@
+package Hospital;
+
+public class Logins extends Link {
+
+}

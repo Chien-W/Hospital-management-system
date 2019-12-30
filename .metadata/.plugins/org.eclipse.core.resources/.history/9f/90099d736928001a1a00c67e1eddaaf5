@@ -1,0 +1,115 @@
+package department;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import jobs.Deletejobs;
+import jobs.Showjobs;
+
+public class Windeletedepartment {
+
+	private JFrame frame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Windeletedepartment window = new Windeletedepartment();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Windeletedepartment() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u5C97\u4F4D\u7BA1\u7406");
+		frame.setBounds(100, 100, 800, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JLabel label = new JLabel("\u4F60\u9700\u8981\u5220\u9664\u7684\u5DE5\u4F5C\u5C97\u4F4D\u4EE3\u53F7\uFF1A");
+		label.setBounds(10, 29, 307, 79);
+		label.setFont(new Font("宋体", Font.PLAIN, 20));
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 92, 786, 391);
+		frame.getContentPane().add(scrollPane);
+		
+		textField = new JTextField();
+		textField.setBounds(269, 53, 249, 29);
+		textField.setColumns(10);
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(label);
+		frame.getContentPane().add(textField);
+		
+		String[][] data=Showjobs.getRows();
+		String[] dataTitle =Showjobs.getHead();
+		table = new JTable(data,dataTitle);
+		table.setFont(new Font("宋体", Font.PLAIN, 18));
+		table.setRowHeight(25);
+		scrollPane.setViewportView(table);
+		table.setEnabled(false);
+		
+		JButton btnNewButton = new JButton("\u786E\u5B9A");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String Num = textField.getText();
+				Deletejobs.delete(Num);
+				JOptionPane.showMessageDialog(frame, "删除成功!");
+				String[][] data=Showjobs.getRows();
+				String[] dataTitle =Showjobs.getHead();
+				table = new JTable(data,dataTitle);
+				table.setFont(new Font("宋体", Font.PLAIN, 18));
+				table.setRowHeight(25);
+				scrollPane.setViewportView(table);
+				table.setEnabled(false);
+			}
+		});
+		btnNewButton.setBounds(579, 46, 88, 40);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton button = new JButton("\u91CD\u7F6E");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+			}
+		});
+		button.setBounds(677, 46, 88, 40);
+		frame.getContentPane().add(button);
+	}
+
+}

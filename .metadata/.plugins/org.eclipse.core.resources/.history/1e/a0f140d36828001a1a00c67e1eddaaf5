@@ -1,0 +1,5 @@
+package department;
+
+public class Insertdepartment extends Wininsertdepartment {
+
+}

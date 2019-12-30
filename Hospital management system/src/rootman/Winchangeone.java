@@ -1,0 +1,340 @@
+package rootman;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class Winchangeone {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void start() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Winchangeone window = new Winchangeone();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Winchangeone() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u5458\u5DE5\u7BA1\u7406");
+		frame.setBounds(100, 100, 870, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JLabel label = new JLabel("\u4F60\u9700\u8981\u4FEE\u6539\u7684\u5458\u5DE5\u53F7\u4E3A\uFF1A");
+		label.setBounds(26, 30, 197, 27);
+		label.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_1 = new JLabel("\u5458\u5DE5\u53F7\uFF1A");
+		label_1.setBounds(26, 75, 82, 27);
+		label_1.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_2 = new JLabel("\u5458\u5DE5\u59D3\u540D\uFF1A");
+		label_2.setBounds(26, 120, 82, 27);
+		label_2.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_3 = new JLabel("\u6240\u5728\u7684\u90E8\u95E8\u53F7\uFF1A");
+		label_3.setBounds(26, 165, 106, 27);
+		label_3.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_4 = new JLabel("\u804C\u52A1\uFF1A");
+		label_4.setBounds(26, 210, 82, 27);
+		label_4.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_5 = new JLabel("\u5B66\u5386\uFF1A");
+		label_5.setBounds(26, 255, 82, 27);
+		label_5.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_6 = new JLabel("\u6027\u522B\uFF1A");
+		label_6.setBounds(26, 300, 82, 27);
+		label_6.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_7 = new JLabel("\u751F\u65E5\uFF1A");
+		label_7.setBounds(26, 345, 82, 27);
+		label_7.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_8 = new JLabel("\u7C4D\u8D2F\uFF1A");
+		label_8.setBounds(26, 390, 82, 27);
+		label_8.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_9 = new JLabel("\u56FD\u7C4D\uFF1A");
+		label_9.setBounds(26, 435, 82, 27);
+		label_9.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_10 = new JLabel("\u6C11\u65CF\uFF1A");
+		label_10.setBounds(347, 75, 82, 27);
+		label_10.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_11 = new JLabel("\u8EAB\u4EFD\u8BC1\u53F7\uFF1A");
+		label_11.setBounds(347, 120, 82, 27);
+		label_11.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_12 = new JLabel("\u5A5A\u59FB\u72B6\u51B5\uFF1A");
+		label_12.setBounds(347, 165, 82, 27);
+		label_12.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_13 = new JLabel("\u5065\u5EB7\u72B6\u51B5\uFF1A");
+		label_13.setBounds(347, 210, 82, 27);
+		label_13.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_14 = new JLabel("\u53C2\u52A0\u5DE5\u4F5C\u65F6\u95F4\uFF1A");
+		label_14.setBounds(347, 255, 106, 27);
+		label_14.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_15 = new JLabel("\u5458\u5DE5\u72B6\u6001\uFF1A");
+		label_15.setBounds(347, 300, 82, 27);
+		label_15.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_16 = new JLabel("\u5BB6\u5EAD\u4F4F\u5740\uFF1A");
+		label_16.setBounds(347, 345, 82, 27);
+		label_16.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel label_17 = new JLabel("\u8054\u7CFB\u7535\u8BDD\uFF1A");
+		label_17.setBounds(347, 390, 82, 27);
+		label_17.setFont(new Font("宋体", Font.PLAIN, 15));
+		
+		JLabel lblemail = new JLabel("\u8054\u7CFBEmail\u5730\u5740\uFF1A");
+		lblemail.setBounds(347, 435, 116, 27);
+		lblemail.setFont(new Font("宋体", Font.PLAIN, 15));
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(label);
+		frame.getContentPane().add(label_1);
+		frame.getContentPane().add(label_2);
+		frame.getContentPane().add(label_4);
+		frame.getContentPane().add(label_5);
+		frame.getContentPane().add(label_6);
+		frame.getContentPane().add(label_7);
+		frame.getContentPane().add(label_8);
+		frame.getContentPane().add(label_9);
+		frame.getContentPane().add(label_3);
+		frame.getContentPane().add(label_17);
+		frame.getContentPane().add(label_16);
+		frame.getContentPane().add(lblemail);
+		frame.getContentPane().add(label_15);
+		frame.getContentPane().add(label_13);
+		frame.getContentPane().add(label_14);
+		frame.getContentPane().add(label_12);
+		frame.getContentPane().add(label_11);
+		frame.getContentPane().add(label_10);
+		
+		JLabel label_18 = new JLabel("\u5DE5\u4F5C\u5C97\u4F4D\u4EE3\u53F7\uFF1A");
+		label_18.setFont(new Font("宋体", Font.PLAIN, 15));
+		label_18.setBounds(627, 75, 116, 27);
+		frame.getContentPane().add(label_18);
+		
+		textField = new JTextField();
+		textField.setBounds(148, 78, 131, 21);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(148, 123, 131, 21);
+		frame.getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(148, 168, 131, 21);
+		frame.getContentPane().add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(148, 213, 131, 21);
+		frame.getContentPane().add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(148, 258, 131, 21);
+		frame.getContentPane().add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(148, 303, 131, 21);
+		frame.getContentPane().add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(148, 348, 131, 21);
+		frame.getContentPane().add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(148, 393, 131, 21);
+		frame.getContentPane().add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(148, 435, 131, 21);
+		frame.getContentPane().add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(474, 78, 131, 21);
+		frame.getContentPane().add(textField_9);
+		
+		textField_10 = new JTextField();
+		textField_10.setColumns(10);
+		textField_10.setBounds(474, 123, 131, 21);
+		frame.getContentPane().add(textField_10);
+		
+		textField_11 = new JTextField();
+		textField_11.setColumns(10);
+		textField_11.setBounds(474, 168, 131, 21);
+		frame.getContentPane().add(textField_11);
+		
+		textField_12 = new JTextField();
+		textField_12.setColumns(10);
+		textField_12.setBounds(474, 213, 131, 21);
+		frame.getContentPane().add(textField_12);
+		
+		textField_13 = new JTextField();
+		textField_13.setColumns(10);
+		textField_13.setBounds(474, 258, 131, 21);
+		frame.getContentPane().add(textField_13);
+		
+		textField_14 = new JTextField();
+		textField_14.setColumns(10);
+		textField_14.setBounds(474, 303, 131, 21);
+		frame.getContentPane().add(textField_14);
+		
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(474, 348, 131, 21);
+		frame.getContentPane().add(textField_15);
+		
+		textField_16 = new JTextField();
+		textField_16.setColumns(10);
+		textField_16.setBounds(474, 393, 131, 21);
+		frame.getContentPane().add(textField_16);
+		
+		textField_17 = new JTextField();
+		textField_17.setColumns(10);
+		textField_17.setBounds(474, 438, 131, 21);
+		frame.getContentPane().add(textField_17);
+		
+		textField_18 = new JTextField();
+		textField_18.setColumns(10);
+		textField_18.setBounds(740, 78, 106, 21);
+		frame.getContentPane().add(textField_18);
+		
+		JButton button = new JButton("\u786E\u5B9A");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String a0 = textField.getText();
+				String a1 = textField_1.getText();
+				String a2 = textField_2.getText();
+				String a3 = textField_3.getText();
+				String a4 = textField_4.getText();
+				String a5 = textField_5.getText();
+				String a6 = textField_6.getText();
+				String a7 = textField_7.getText();
+				String a8 = textField_8.getText();
+				String a9 = textField_9.getText();
+				String a10 = textField_10.getText();
+				String a11 = textField_11.getText();
+				String a12 = textField_12.getText();
+				String a13 = textField_13.getText();
+				String a14 = textField_14.getText();
+				String a15 = textField_15.getText();
+				String a16 = textField_16.getText();
+				String a17 = textField_17.getText();
+				String a18 = textField_18.getText();
+				String S=textField_19.getText();
+				Changeone.change(S, a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18);
+				JOptionPane.showMessageDialog(frame, "修改员工信息成功!");
+				frame.dispose();
+			}
+		});
+		button.setBounds(647, 390, 94, 67);
+		frame.getContentPane().add(button);
+		
+		JButton button_1 = new JButton("\u91CD\u7F6E");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+				textField_6.setText("");
+				textField_7.setText("");
+				textField_8.setText("");
+				textField_9.setText("");
+				textField_10.setText("");
+				textField_11.setText("");
+				textField_12.setText("");
+				textField_13.setText("");
+				textField_14.setText("");
+				textField_15.setText("");
+				textField_16.setText("");
+				textField_17.setText("");
+				textField_18.setText("");
+				textField_19.setText("");
+			}
+		});
+		button_1.setBounds(752, 390, 94, 67);
+		frame.getContentPane().add(button_1);
+		
+		textField_19 = new JTextField();
+		textField_19.setColumns(10);
+		textField_19.setBounds(191, 33, 131, 21);
+		frame.getContentPane().add(textField_19);
+	}
+
+}

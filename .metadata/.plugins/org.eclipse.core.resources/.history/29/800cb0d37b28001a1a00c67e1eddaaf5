@@ -1,0 +1,84 @@
+package user;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+
+import javax.swing.GroupLayout;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.GroupLayout.Alignment;
+
+import rootman.Selectone;
+
+
+public class Winusershow {
+
+	private JFrame frame;
+	private JTable table_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Winusershow window = new Winusershow();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Winusershow() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u4E2A\u4EBA\u4FE1\u606F\u67E5\u8BE2");
+		frame.setBounds(100, 100, 870, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		
+		String[][] data=Selectone.getnumber(content);
+		table = new JTable(data,dataTitle);
+		table.setFont(new Font("宋体", Font.PLAIN, 18));
+		table.setRowHeight(25);
+		scrollPane.setViewportView(table);
+		table.setEnabled(false);
+		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
+		groupLayout.setHorizontalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addComponent(scrollPane, GroupLayout.DEFAULT_SIZE, 856, Short.MAX_VALUE)
+		);
+		groupLayout.setVerticalGroup(
+			groupLayout.createParallelGroup(Alignment.LEADING)
+				.addGroup(groupLayout.createSequentialGroup()
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 473, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
+		frame.getContentPane().setLayout(groupLayout);
+	}
+
+}

@@ -1,0 +1,161 @@
+package Medicine;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Changemedicine {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
+	private JButton button;
+	private JButton button_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void start() {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Changemedicine window = new Changemedicine();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Changemedicine() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u836F\u54C1\u7BA1\u7406");
+		frame.setBounds(100, 100, 800, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JLabel label = new JLabel("\u4F60\u60F3\u8981\u4FEE\u6539\u7684\u836F\u5242\u4EE3\u53F7\u4E3A\uFF1A");
+		label.setBounds(10, 25, 339, 87);
+		label.setFont(new Font("宋体", Font.PLAIN, 25));
+		
+		textField = new JTextField();
+		textField.setBounds(305, 50, 181, 29);
+		textField.setColumns(10);
+		
+		JLabel label_1 = new JLabel("\u836F\u5242\u4EE3\u53F7\uFF1A");
+		label_1.setBounds(20, 118, 112, 45);
+		label_1.setFont(new Font("宋体", Font.PLAIN, 22));
+		
+		JLabel label_2 = new JLabel("\u836F\u5242\u540D\u79F0\uFF1A");
+		label_2.setBounds(20, 181, 112, 45);
+		label_2.setFont(new Font("宋体", Font.PLAIN, 22));
+		
+		JLabel label_3 = new JLabel("\u836F\u5242\u4EF7\u683C\uFF1A");
+		label_3.setBounds(20, 244, 112, 45);
+		label_3.setFont(new Font("宋体", Font.PLAIN, 22));
+		
+		JLabel label_4 = new JLabel("\u836F\u5242\u5E93\u5B58\u6570\u91CF\uFF1A");
+		label_4.setBounds(20, 307, 172, 45);
+		label_4.setFont(new Font("宋体", Font.PLAIN, 22));
+		
+		JLabel label_5 = new JLabel("\u5907\u6CE8\uFF1A");
+		label_5.setBounds(20, 370, 112, 45);
+		label_5.setFont(new Font("宋体", Font.PLAIN, 22));
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(label);
+		frame.getContentPane().add(textField);
+		frame.getContentPane().add(label_1);
+		frame.getContentPane().add(label_2);
+		frame.getContentPane().add(label_3);
+		frame.getContentPane().add(label_4);
+		frame.getContentPane().add(label_5);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(191, 122, 295, 29);
+		frame.getContentPane().add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(191, 181, 295, 29);
+		frame.getContentPane().add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(191, 244, 295, 29);
+		frame.getContentPane().add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(191, 307, 295, 29);
+		frame.getContentPane().add(textField_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(191, 368, 295, 29);
+		frame.getContentPane().add(textField_5);
+		
+		button = new JButton("\u786E\u5B9A");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String S = textField.getText();
+				String Num = textField_1.getText();
+				String Name = textField_2.getText();
+				String Age = textField_3.getText();
+				String Sex = textField_4.getText();
+				String SelectedIndex = textField_5.getText();
+				Change.change(S,Num,Name,Age,Sex,SelectedIndex);
+				JOptionPane.showMessageDialog(frame, "修改成功!");
+				frame.dispose();
+			}
+		});
+		button.setBounds(530, 402, 100, 60);
+		frame.getContentPane().add(button);
+		
+		button_1 = new JButton("\u91CD\u7F6E");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				textField.setText("");
+				textField_1.setText("");
+				textField_2.setText("");
+				textField_3.setText("");
+				textField_4.setText("");
+				textField_5.setText("");
+			}
+		});
+		button_1.setBounds(655, 402, 100, 60);
+		frame.getContentPane().add(button_1);
+	}
+
+}

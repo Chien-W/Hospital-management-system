@@ -1,0 +1,5 @@
+package rootman;
+
+public class Deleteone extends Windeleteone {
+
+}

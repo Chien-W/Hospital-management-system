@@ -1,0 +1,5 @@
+package permissions;
+
+public class Insertpermission extends Wininsertpermission {
+
+}

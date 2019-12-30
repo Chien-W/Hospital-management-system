@@ -1,0 +1,90 @@
+package Inpatient;
+
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.Toolkit;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class Changeinpatientbed {
+
+	private JFrame frame;
+	private JTextField textField;
+	private JTextField textField_1;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Changeinpatientbed window = new Changeinpatientbed();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Changeinpatientbed() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setTitle("\u75C5\u5E8A\u7BA1\u7406");
+		frame.setBounds(100, 100, 800, 520);
+		
+		int windowWidth = frame.getWidth(); //获得窗口宽
+		int windowHeight = frame.getHeight(); //获得窗口高
+		Toolkit kit = Toolkit.getDefaultToolkit(); //定义工具包
+		Dimension screenSize = kit.getScreenSize(); //获取屏幕的尺寸
+		int screenWidth = screenSize.width; //获取屏幕的宽
+		int screenHeight = screenSize.height; //获取屏幕的高
+		frame.setLocation(screenWidth/2-windowWidth/2, screenHeight/2-windowHeight/2);
+		
+		JLabel label = new JLabel("\u4F60\u9700\u8981\u4FEE\u6539\u7684\u6570\u636E\u4E3A\uFF1A");
+		label.setBounds(19, 26, 327, 110);
+		label.setFont(new Font("宋体", Font.PLAIN, 30));
+		
+		JLabel label_1 = new JLabel("\u75C5\u5E8A\u53F7\uFF1A");
+		label_1.setBounds(24, 151, 137, 62);
+		label_1.setFont(new Font("宋体", Font.PLAIN, 25));
+		
+		JLabel label_2 = new JLabel("\u75C5\u5E8A\u72B6\u6001\uFF1A");
+		label_2.setBounds(26, 273, 137, 62);
+		label_2.setFont(new Font("宋体", Font.PLAIN, 25));
+		
+		textField = new JTextField();
+		textField.setBounds(163, 165, 161, 34);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBounds(163, 282, 161, 34);
+		textField_1.setColumns(10);
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(label);
+		frame.getContentPane().add(label_1);
+		frame.getContentPane().add(label_2);
+		frame.getContentPane().add(textField);
+		frame.getContentPane().add(textField_1);
+		
+		JLabel label_3 = new JLabel("\u7A7A\u95F2/\u6709\u4EBA");
+		label_3.setFont(new Font("宋体", Font.PLAIN, 25));
+		label_3.setBounds(336, 268, 137, 62);
+		frame.getContentPane().add(label_3);
+	}
+
+}

@@ -1,0 +1,5 @@
+package rootman;
+
+public class Insertone extends Wininsertone {
+
+}

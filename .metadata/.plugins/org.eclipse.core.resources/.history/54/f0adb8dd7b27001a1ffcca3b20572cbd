@@ -1,0 +1,5 @@
+package Inpatient;
+
+public class Show3 extends Showinpatientbed {
+
+}

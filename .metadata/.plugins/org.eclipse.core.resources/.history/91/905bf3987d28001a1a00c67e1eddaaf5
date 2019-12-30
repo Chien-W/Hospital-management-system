@@ -1,0 +1,5 @@
+package user;
+
+public class Usertshow2 extends Winusershow2 {
+
+}

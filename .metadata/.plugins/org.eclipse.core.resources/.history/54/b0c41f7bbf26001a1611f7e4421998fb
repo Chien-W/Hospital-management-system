@@ -1,0 +1,5 @@
+package Instrument;
+
+public class Insert1 extends Insertinstrument {
+
+}

@@ -1,0 +1,5 @@
+package Inpatient;
+
+public class Delete2 extends Deleteinpatient {
+
+}

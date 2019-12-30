@@ -1,0 +1,57 @@
+package Inpatient;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+public class Delete2 extends Deleteinpatient {
+	public static void delete(String Name) {
+		String sql_url = "jdbc:sqlserver://localhost:1433;integratedSecurity=true;DatabaseName=Hospital table"; // 数据库路径（一般都是这样写），test是数据库名称
+		String name = "sa"; // 用户名
+		String password = "wu123456"; // 密码
+		Connection conn;
+		PreparedStatement preparedStatement = null;
+
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // 连接驱动
+			conn = DriverManager.getConnection(sql_url, name, password); // 连接数据库
+			preparedStatement = conn.prepareStatement("select 病人床位号 from 病人信息表 where 病人姓名='"+Name+"'");
+			ResultSet result1 = preparedStatement.executeQuery();
+			String Bed= "000000";
+			System.out.println(Bed);
+			Bed=result1.getString(7);
+			System.out.println(Bed);
+			if (result1.wasNull())
+				JOptionPane.showMessageDialog(null, "结果集中无记录");
+		} catch (ClassNotFoundException e) {
+		} catch (SQLException e) {
+		}
+		
+/*		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver"); // 连接驱动
+			conn = DriverManager.getConnection(sql_url, name, password); // 连接数据库
+			preparedStatement = conn.prepareStatement("delete from 病人信息表 where 病人姓名='"+Name+"'");
+			ResultSet result1 = preparedStatement.executeQuery();
+			if (result1.wasNull())
+				JOptionPane.showMessageDialog(null, "结果集中无记录");
+		} catch (ClassNotFoundException e) {
+		} catch (SQLException e) {
+		}
+		
+		try {
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");		//连接驱动
+			conn = DriverManager.getConnection(sql_url, name, password);	//连接数据库
+			preparedStatement = conn.prepareStatement("update 床位信息表 set 床位号 = '"+Bed+"', 床位状态 ='空闲' where 床位号 = '"+Bed+"'");
+			ResultSet result1 = preparedStatement.executeQuery();
+			if(result1.wasNull())
+				JOptionPane.showMessageDialog(null, "结果集中无记录");
+			} catch (ClassNotFoundException e) {
+			} catch (SQLException e) {
+			}
+		*/
+	}
+}

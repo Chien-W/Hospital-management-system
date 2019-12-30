@@ -1,0 +1,7 @@
+package Inpatient;
+
+import Hospital.Wininpatient;
+
+public class Show2 extends Wininpatient {
+
+}
